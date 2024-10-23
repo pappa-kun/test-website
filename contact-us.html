@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill showcase</title>
+    <link rel="icon" type="image/x-icon" href="assets/icon.png">
+    <link rel="stylesheet" type="text/css" href="scripts/styles.css">
+    <script src="scripts/scripts.js" defer></script>
+    <style>
+        :root {
+            font-size: 16px;
+
+            --linearPrimarySecondary: linear-gradient(#3a31d8, #020024);
+            --linearPrimaryAccent: linear-gradient(#3a31d8, #0600c2);
+            --linearSecondaryAccent: linear-gradient(#020024, #0600c2);
+            --radialPrimarySecondary: radial-gradient(#3a31d8, #020024);
+            --radialPrimaryAccent: radial-gradient(#3a31d8, #0600c2);
+            --radialSecondaryAccent: radial-gradient(#020024, #0600c2);
+            
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--background);
+            font-family: "Helvetica", "Arial", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="/index.html" class="nav-link">
+                    <span class="link-text">Home</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/services.html" class="nav-link">
+                    <span class="link-text">Our services</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/contact-us.html" class="nav-link">
+                    <span class="link-text">Contact us</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/about-us.html" class="nav-link">
+                    <span class="link-text">About us</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a id="theme-toggle" href="#" class="nav-link theme-toggle">
+                    <svg id="sun-icon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="sun" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-sun"><path fill="currentColor" d="M375.7 19.7c-1.5-8-6.9-14.7-14.4-17.8s-16.1-2.2-22.8 2.4L256 61.1 173.5 4.2c-6.7-4.6-15.3-5.5-22.8-2.4s-12.9 9.8-14.4 17.8l-18.1 98.5L19.7 136.3c-8 1.5-14.7 6.9-17.8 14.4s-2.2 16.1 2.4 22.8L61.1 256 4.2 338.5c-4.6 6.7-5.5 15.3-2.4 22.8s9.8 13 17.8 14.4l98.5 18.1 18.1 98.5c1.5 8 6.9 14.7 14.4 17.8s16.1 2.2 22.8-2.4L256 450.9l82.5 56.9c6.7 4.6 15.3 5.5 22.8 2.4s12.9-9.8 14.4-17.8l18.1-98.5 98.5-18.1c8-1.5 14.7-6.9 17.8-14.4s2.2-16.1-2.4-22.8L450.9 256l56.9-82.5c4.6-6.7 5.5-15.3 2.4-22.8s-9.8-12.9-17.8-14.4l-98.5-18.1L375.7 19.7zM269.6 110l65.6-45.2 14.4 78.3c1.8 9.8 9.5 17.5 19.3 19.3l78.3 14.4L402 242.4c-5.7 8.2-5.7 19 0 27.2l45.2 65.6-78.3 14.4c-9.8 1.8-17.5 9.5-19.3 19.3l-14.4 78.3L269.6 402c-8.2-5.7-19-5.7-27.2 0l-65.6 45.2-14.4-78.3c-1.8-9.8-9.5-17.5-19.3-19.3L64.8 335.2 110 269.6c5.7-8.2 5.7-19 0-27.2L64.8 176.8l78.3-14.4c9.8-1.8 17.5-9.5 19.3-19.3l14.4-78.3L242.4 110c8.2 5.7 19 5.7 27.2 0zM256 368a112 112 0 1 0 0-224 112 112 0 1 0 0 224zM192 256a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z"/></svg>
+            
+                    <svg id="moon-icon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="moon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-moon"><path fill="currentColor" d="M279.135 512c108.406 0 199.604-66.255 236.664-158.5c5.092-12.946-7.755-25.058-20.755-21.594C443.292 349.78 399.46 360 354.3 360c-123.148 0-223.2-100.852-223.2-224c0-45.16 10.22-88.992 27.1-139.034c3.464-13-8.648-25.847-21.593-20.754C66.255 33.26 0 124.456 0 232.87C0 380.884 127.616 512 279.135 512z"/></svg>
+            
+                    <span class="link-text"></span>
+                </a>
+            </li>    
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Please fill out the form below to contact us.</h2>
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <p>Current response time estimate: 3 business days.</p>
+            
+            <form action="#" method="post" class="contact-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Company name</label>
+                <input type="text" id="company-name" name="company-name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+    
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <div class="footer">
+        <footer></footer>
+      </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill showcase</title>
+    <link rel="icon" type="image/x-icon" href="assets/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="scripts/styles.css">
+    <script src="scripts/scripts.js" defer></script>
+    <style>
+        :root {
+            font-size: 16px;
+
+            --linearPrimarySecondary: linear-gradient(#3a31d8, #020024);
+            --linearPrimaryAccent: linear-gradient(#3a31d8, #0600c2);
+            --linearSecondaryAccent: linear-gradient(#020024, #0600c2);
+            --radialPrimarySecondary: radial-gradient(#3a31d8, #020024);
+            --radialPrimaryAccent: radial-gradient(#3a31d8, #0600c2);
+            --radialSecondaryAccent: radial-gradient(#020024, #0600c2);
+            
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--background);
+            font-family: "Rubik", serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="/index.html" class="nav-link">
+                    <span class="link-text">Home</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/services.html" class="nav-link">
+                    <span class="link-text">Our services</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/contact-us.html" class="nav-link">
+                    <span class="link-text">Contact us</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/about-us.html" class="nav-link">
+                    <span class="link-text">About us</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a id="theme-toggle" href="#" class="nav-link theme-toggle">
+                    <svg id="sun-icon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="sun" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-sun"><path fill="currentColor" d="M375.7 19.7c-1.5-8-6.9-14.7-14.4-17.8s-16.1-2.2-22.8 2.4L256 61.1 173.5 4.2c-6.7-4.6-15.3-5.5-22.8-2.4s-12.9 9.8-14.4 17.8l-18.1 98.5L19.7 136.3c-8 1.5-14.7 6.9-17.8 14.4s-2.2 16.1 2.4 22.8L61.1 256 4.2 338.5c-4.6 6.7-5.5 15.3-2.4 22.8s9.8 13 17.8 14.4l98.5 18.1 18.1 98.5c1.5 8 6.9 14.7 14.4 17.8s16.1 2.2 22.8-2.4L256 450.9l82.5 56.9c6.7 4.6 15.3 5.5 22.8 2.4s12.9-9.8 14.4-17.8l18.1-98.5 98.5-18.1c8-1.5 14.7-6.9 17.8-14.4s2.2-16.1-2.4-22.8L450.9 256l56.9-82.5c4.6-6.7 5.5-15.3 2.4-22.8s-9.8-12.9-17.8-14.4l-98.5-18.1L375.7 19.7zM269.6 110l65.6-45.2 14.4 78.3c1.8 9.8 9.5 17.5 19.3 19.3l78.3 14.4L402 242.4c-5.7 8.2-5.7 19 0 27.2l45.2 65.6-78.3 14.4c-9.8 1.8-17.5 9.5-19.3 19.3l-14.4 78.3L269.6 402c-8.2-5.7-19-5.7-27.2 0l-65.6 45.2-14.4-78.3c-1.8-9.8-9.5-17.5-19.3-19.3L64.8 335.2 110 269.6c5.7-8.2 5.7-19 0-27.2L64.8 176.8l78.3-14.4c9.8-1.8 17.5-9.5 19.3-19.3l14.4-78.3L242.4 110c8.2 5.7 19 5.7 27.2 0zM256 368a112 112 0 1 0 0-224 112 112 0 1 0 0 224zM192 256a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z"/></svg>
+            
+                    <svg id="moon-icon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="moon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-moon"><path fill="currentColor" d="M279.135 512c108.406 0 199.604-66.255 236.664-158.5c5.092-12.946-7.755-25.058-20.755-21.594C443.292 349.78 399.46 360 354.3 360c-123.148 0-223.2-100.852-223.2-224c0-45.16 10.22-88.992 27.1-139.034c3.464-13-8.648-25.847-21.593-20.754C66.255 33.26 0 124.456 0 232.87C0 380.884 127.616 512 279.135 512z"/></svg>
+            
+                    <span class="link-text"></span>
+                </a>
+            </li>            
+        </ul>
+    </nav>
+
+    <main>
+        <div class="hero progress-bar-section">
+            <div class="hero-text">
+                <h1 class="section-title">We are <br>EXAMPLE</h1>
+                <p class="italic">"Service from professionals to professionals."</p>
+            </div>
+            <div class="hero-img">
+                <img class="moon" src="/assets/moon.png" alt="An illustration of the moon">
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-line">
+                <div class="progress-section" id="section-prev"></div>
+                <div class="progress-section current" id="section-current"></div>
+                <div class="progress-section" id="section-next"></div>
+            </div>
+        </div>
+        
+        <div class="progress-content">
+        <section id="section1" class="hidden progress-bar-section">
+            <h2 class="section-title">Why example?</h2>
+            <p>We provide expertise from certified professionals of multiple fields for <span class="italic">your </span> needs. We have a long track record of our performance and our services are used daily by multiple Fortune 500 companies.</p>
+        </section>
+
+        <section id="section2" class="hidden progress-bar-section">
+            <h2 class="section-title">Costs</h2>
+            <p>Our price to performance ratio is umatched. You will not find a better service for the cost, guaranteed.</p>
+            <div class="graphs">
+            <svg width="450px" height="330px" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100%" height="100%" fill="var(--background-secondary)" class="graph hidden"/>
+
+                <text x="30" y="50" font-size="30px" fill="var(--text)" font-weight="bold" class="graph hidden">Cost Efficiency</text>
+
+                <text x="30" y="100" font-size="1rem" fill="var(--text-secondary)" class="graph hidden">Over 50% more efficient than the next competitor.</text>
+                
+                <rect x="30" y="120" width="500" height="150" fill="var(--background-secondary)"/>
+                <rect x="30" y="120" width="100" height="150" fill="var(--primary" class="graph hidden"/>
+                <rect x="150" y="120" width="150" height="75" fill="var(--accent)" class="graph hidden"/>
+                <rect x="320" y="120" width="100" height="50" fill="var(--secondary)" class="graph hidden"/>
+                
+                <text x="30" y="295" font-size="0.8rem" fill="var(--text)">Example Corp.</text>
+                <text x="150" y="295" font-size="0.8rem" fill="var(--text)">Example Corp #2.</text>
+                <text x="320" y="295" font-size="0.8rem" fill="var(--text)">Example Corp #3.</text>
+            </svg>
+            </div>
+            
+        </section>
+
+        <section id="section3" class="hidden progress-bar-section">
+            <h2 class="section-title">Meet some of our professionals</h2>
+            <div class="professionals">
+                <div class="professional hidden">
+                    <img src="/assets/professional_1.png" alt="A clip art image of a professional, in this case a doctor.">
+                    <p>Dr. Jack T. <br>> Highly skilled physician with 15 years of experience in internal medicine.</p>
+                </div>
+                <div class="professional hidden">
+                    <img src="/assets/professional_2.png" alt="A clip art image of a professional, in this case a chef.">
+                    <p>Emma S. <br>> 10 years of experience as a professional chef.</p>
+                </div>
+                <div class="professional hidden">
+                    <img src="/assets/professional_3.png" alt="A clip art image of a professional, in this case a financial analyst.">
+                    <p>John P. <br>> Business analyst with over 8 years of experience in financial consulting.</p>
+                </div>
+                <div class="professional hidden">
+                    <img src="/assets/professional_4.png" alt="A clip art image of a professional, in this case an engineer.">
+                    <p>Alex M. <br>> Civil engineer with a decade of experience in large-scale infrastructure projects</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="section4" class="hidden progress-bar-section">
+            <h2 class="section-title">Interested?</h2>
+            <a href="/contact-us.html" class="contact">Contact us.</a>
+        </section>
+        </div>
+    </main>
+
+    <div class="footer">
+        <footer></footer>
+      </div>
+</body>
+</html>
