@@ -8,18 +8,6 @@
     --accent: #0600c2;
 }
 
-  @media (prefers-color-scheme: light) {
-    :root {
-      --text: #040316;
-      --text-secondary: #6962ea;
-      --background: #fbfbfe;
-      --background-secondary: #f0f0f5;
-      --primary: #2f27ce;
-      --secondary: #dddbff;
-      --accent: #443dff;
-    }
-}
-
 html[data-theme='light'] {
     --text: #040316;
     --text-secondary: #6962ea;

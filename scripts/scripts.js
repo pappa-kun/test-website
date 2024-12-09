@@ -85,49 +85,47 @@ const themeToggleButton = document.getElementById('theme-toggle');
 const sunIcon = document.getElementById('sun-icon');
 const moonIcon = document.getElementById('moon-icon');
 
-// Check if a saved theme exists in localStorage
-const savedTheme = localStorage.getItem('theme');
+// Function to apply theme based on the value
+const applyTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
 
-// Check user's system preference for dark mode
-const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Save the theme to localStorage so it persists across sessions
+    localStorage.setItem('theme', theme);
 
-// If there’s a saved theme, apply it, otherwise check system preference
-if (savedTheme) {
-    document.documentElement.setAttribute('data-theme', savedTheme);
-} else {
-    document.documentElement.setAttribute('data-theme', userPrefersDark ? 'dark' : 'light');
-}
+    // Update the icons based on the current theme
+    updateIcons();
+};
 
-// Function to update the icons based on the current theme
+// Function to update icons based on the theme
 const updateIcons = () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     if (currentTheme === 'dark') {
-        // Dark mode, show moon icon, hide sun icon
         sunIcon.style.display = 'none';
         moonIcon.style.display = 'inline';
     } else {
-        // Light mode, show sun icon, hide moon icon
         sunIcon.style.display = 'inline';
         moonIcon.style.display = 'none';
     }
 };
 
-// Set initial icons on page load
-updateIcons();
+// On page load, check localStorage or system preference for the theme
+const savedTheme = localStorage.getItem('theme');
+const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Apply the theme based on saved settings or system preference
+if (savedTheme) {
+    // Use saved theme
+    applyTheme(savedTheme);
+} else {
+    // Use system preference if no saved theme is found
+    applyTheme(userPrefersDark ? 'dark' : 'light');
+}
 
 // Toggle theme when the button is clicked
 themeToggleButton.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    // Set the new theme
-    document.documentElement.setAttribute('data-theme', newTheme);
-    
-    // Save the theme preference in localStorage
-    localStorage.setItem('theme', newTheme);
-    
-    // Update the icons to match the new theme
-    updateIcons();
+    applyTheme(newTheme);
 });
 
 
