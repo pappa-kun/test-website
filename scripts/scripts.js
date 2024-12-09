@@ -1,3 +1,4 @@
+// Hide & Show Animation
 const mobileObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -40,6 +41,7 @@ window.addEventListener("resize", () => {
     }
 });
 
+// Progress bar (disabled)
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('.progress-bar-section');
     const prevDot = document.querySelector('#section-prev');
@@ -80,23 +82,19 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateProgressBar);
 });
 
-// Get the theme toggle button and icons
+// Theme switching
 const themeToggleButton = document.getElementById('theme-toggle');
 const sunIcon = document.getElementById('sun-icon');
 const moonIcon = document.getElementById('moon-icon');
 
-// Function to apply theme based on the value
 const applyTheme = (theme) => {
     document.documentElement.setAttribute('data-theme', theme);
 
-    // Save the theme to localStorage so it persists across sessions
     localStorage.setItem('theme', theme);
 
-    // Update the icons based on the current theme
     updateIcons();
 };
 
-// Function to update icons based on the theme
 const updateIcons = () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     if (currentTheme === 'dark') {
@@ -108,20 +106,15 @@ const updateIcons = () => {
     }
 };
 
-// On page load, check localStorage or system preference for the theme
 const savedTheme = localStorage.getItem('theme');
 const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-// Apply the theme based on saved settings or system preference
 if (savedTheme) {
-    // Use saved theme
     applyTheme(savedTheme);
 } else {
-    // Use system preference if no saved theme is found
     applyTheme(userPrefersDark ? 'dark' : 'light');
 }
 
-// Toggle theme when the button is clicked
 themeToggleButton.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
