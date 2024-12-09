@@ -80,26 +80,58 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateProgressBar);
 });
 
-const themeToggleBtn = document.getElementById('theme-toggle');
-const userTheme = localStorage.getItem('theme');
-const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+// Get the theme toggle button and icons
+const themeToggleButton = document.getElementById('theme-toggle');
+const sunIcon = document.getElementById('sun-icon');
+const moonIcon = document.getElementById('moon-icon');
 
-if (userTheme) {
-    document.documentElement.setAttribute('data-theme', userTheme);
-} else if (systemTheme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
+// Check if a saved theme exists in localStorage
+const savedTheme = localStorage.getItem('theme');
+
+// Check user's system preference for dark mode
+const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// If there’s a saved theme, apply it, otherwise check system preference
+if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
 } else {
-    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.setAttribute('data-theme', userPrefersDark ? 'dark' : 'light');
 }
 
-themeToggleBtn.addEventListener('click', (e) => {
-    e.preventDefault(); 
+// Function to update the icons based on the current theme
+const updateIcons = () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+        // Dark mode, show moon icon, hide sun icon
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'inline';
+    } else {
+        // Light mode, show sun icon, hide moon icon
+        sunIcon.style.display = 'inline';
+        moonIcon.style.display = 'none';
+    }
+};
+
+// Set initial icons on page load
+updateIcons();
+
+// Toggle theme when the button is clicked
+themeToggleButton.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
+    // Set the new theme
     document.documentElement.setAttribute('data-theme', newTheme);
+    
+    // Save the theme preference in localStorage
     localStorage.setItem('theme', newTheme);
+    
+    // Update the icons to match the new theme
+    updateIcons();
 });
+
+
+
 
 
 

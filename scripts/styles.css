@@ -30,6 +30,16 @@ html[data-theme='light'] {
     --accent: #443dff;
 }
 
+html[data-theme='dark'] {
+    --text: #eae9fc;
+    --text-secondary: #6962ea;
+    --background: #010104;
+    --background-secondary: #18181b;
+    --primary: #3a31d8;
+    --secondary: #020024;
+    --accent: #0600c2;
+}
+
 .theme-toggle {
     background: none;
     border: none;
@@ -39,26 +49,6 @@ html[data-theme='light'] {
     justify-content: center;
     width: 40px;
     height: 40px;
-}
-
-#sun-icon {
-    display: none;
-}
-
-html[data-theme='light'] #sun-icon {
-    display: inline;
-}
-
-html[data-theme='light'] #moon-icon {
-    display: none;
-}
-
-html[data-theme='dark'] #sun-icon {
-    display: none;
-}
-
-html[data-theme='dark'] #moon-icon {
-    display: inline;
 }
 
 h1 {
@@ -86,6 +76,10 @@ p {
 
 .nav-link {
     color: var(--text)
+}
+
+.nav-link:focus {
+    color: var(--text);
 }
 
 .nav-link svg {
