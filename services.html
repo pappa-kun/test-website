@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Example - Our services</title>
     <link rel="icon" type="image/x-icon" href="assets/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="scripts/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="scripts/scripts.js" defer></script>
     <style>
         :root {
@@ -24,66 +29,69 @@
             margin: 0;
             padding: 0;
             background: var(--background);
-            font-family: "Helvetica", "Arial", sans-serif;
+            font-family: "Rubik", serif;
+            font-weight: 500;
+            font-style: normal;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="index.html" class="nav-link">
-                    <span class="link-text">Home</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="services.html" class="nav-link">
-                    <span class="link-text">Our services</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="contact-us.html" class="nav-link">
-                    <span class="link-text">Contact us</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="about-us.html" class="nav-link">
-                    <span class="link-text">About us</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a id="theme-toggle" href="#" class="nav-link theme-toggle">
-                    <svg id="sun-icon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="sun" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-sun"><path fill="currentColor" d="M375.7 19.7c-1.5-8-6.9-14.7-14.4-17.8s-16.1-2.2-22.8 2.4L256 61.1 173.5 4.2c-6.7-4.6-15.3-5.5-22.8-2.4s-12.9 9.8-14.4 17.8l-18.1 98.5L19.7 136.3c-8 1.5-14.7 6.9-17.8 14.4s-2.2 16.1 2.4 22.8L61.1 256 4.2 338.5c-4.6 6.7-5.5 15.3-2.4 22.8s9.8 13 17.8 14.4l98.5 18.1 18.1 98.5c1.5 8 6.9 14.7 14.4 17.8s16.1 2.2 22.8-2.4L256 450.9l82.5 56.9c6.7 4.6 15.3 5.5 22.8 2.4s12.9-9.8 14.4-17.8l18.1-98.5 98.5-18.1c8-1.5 14.7-6.9 17.8-14.4s2.2-16.1-2.4-22.8L450.9 256l56.9-82.5c4.6-6.7 5.5-15.3 2.4-22.8s-9.8-12.9-17.8-14.4l-98.5-18.1L375.7 19.7zM269.6 110l65.6-45.2 14.4 78.3c1.8 9.8 9.5 17.5 19.3 19.3l78.3 14.4L402 242.4c-5.7 8.2-5.7 19 0 27.2l45.2 65.6-78.3 14.4c-9.8 1.8-17.5 9.5-19.3 19.3l-14.4 78.3L269.6 402c-8.2-5.7-19-5.7-27.2 0l-65.6 45.2-14.4-78.3c-1.8-9.8-9.5-17.5-19.3-19.3L64.8 335.2 110 269.6c5.7-8.2 5.7-19 0-27.2L64.8 176.8l78.3-14.4c9.8-1.8 17.5-9.5 19.3-19.3l14.4-78.3L242.4 110c8.2 5.7 19 5.7 27.2 0zM256 368a112 112 0 1 0 0-224 112 112 0 1 0 0 224zM192 256a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z"/></svg>
-            
-                    <svg id="moon-icon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="moon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-moon"><path fill="currentColor" d="M279.135 512c108.406 0 199.604-66.255 236.664-158.5c5.092-12.946-7.755-25.058-20.755-21.594C443.292 349.78 399.46 360 354.3 360c-123.148 0-223.2-100.852-223.2-224c0-45.16 10.22-88.992 27.1-139.034c3.464-13-8.648-25.847-21.593-20.754C66.255 33.26 0 124.456 0 232.87C0 380.884 127.616 512 279.135 512z"/></svg>
-            
-                    <span class="link-text"></span>
-                </a>
-            </li>    
-        </ul>
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container-fluid" data-bs-theme="dark">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                          <a class="nav-link" href="index.html">Home</a>
+                      </li>
+      
+                      <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="services.html">Our services</a>
+                      </li>
+      
+                      <li class="nav-item">
+                          <a class="nav-link" href="contact-us.html">Contact us</a>
+                      </li>
+      
+                      <li class="nav-item">
+                          <a class="nav-link" href="about-us.html">About us</a>
+                      </li>
+                      
+                      <li class="nav-item">
+                          <a id="theme-toggle" href="#" class="nav-link theme-toggle">
+                              <svg id="sun-icon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="sun" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-sun"><path fill="currentColor" d="M375.7 19.7c-1.5-8-6.9-14.7-14.4-17.8s-16.1-2.2-22.8 2.4L256 61.1 173.5 4.2c-6.7-4.6-15.3-5.5-22.8-2.4s-12.9 9.8-14.4 17.8l-18.1 98.5L19.7 136.3c-8 1.5-14.7 6.9-17.8 14.4s-2.2 16.1 2.4 22.8L61.1 256 4.2 338.5c-4.6 6.7-5.5 15.3-2.4 22.8s9.8 13 17.8 14.4l98.5 18.1 18.1 98.5c1.5 8 6.9 14.7 14.4 17.8s16.1 2.2 22.8-2.4L256 450.9l82.5 56.9c6.7 4.6 15.3 5.5 22.8 2.4s12.9-9.8 14.4-17.8l18.1-98.5 98.5-18.1c8-1.5 14.7-6.9 17.8-14.4s2.2-16.1-2.4-22.8L450.9 256l56.9-82.5c4.6-6.7 5.5-15.3 2.4-22.8s-9.8-12.9-17.8-14.4l-98.5-18.1L375.7 19.7zM269.6 110l65.6-45.2 14.4 78.3c1.8 9.8 9.5 17.5 19.3 19.3l78.3 14.4L402 242.4c-5.7 8.2-5.7 19 0 27.2l45.2 65.6-78.3 14.4c-9.8 1.8-17.5 9.5-19.3 19.3l-14.4 78.3L269.6 402c-8.2-5.7-19-5.7-27.2 0l-65.6 45.2-14.4-78.3c-1.8-9.8-9.5-17.5-19.3-19.3L64.8 335.2 110 269.6c5.7-8.2 5.7-19 0-27.2L64.8 176.8l78.3-14.4c9.8-1.8 17.5-9.5 19.3-19.3l14.4-78.3L242.4 110c8.2 5.7 19 5.7 27.2 0zM256 368a112 112 0 1 0 0-224 112 112 0 1 0 0 224zM192 256a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z"/></svg>
+                      
+                              <svg id="moon-icon" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="moon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-moon"><path fill="currentColor" d="M279.135 512c108.406 0 199.604-66.255 236.664-158.5c5.092-12.946-7.755-25.058-20.755-21.594C443.292 349.78 399.46 360 354.3 360c-123.148 0-223.2-100.852-223.2-224c0-45.16 10.22-88.992 27.1-139.034c3.464-13-8.648-25.847-21.593-20.754C66.255 33.26 0 124.456 0 232.87C0 380.884 127.616 512 279.135 512z"/></svg>
+                          </a>
+                      </li>            
+                  </ul>
+              </div>
+        </div>
     </nav>
 
     <main>
-        <div class="hero progress-bar-section">
-            <div class="hero-text">
-                <h1 class="section-title">Our services</h1>
-                <p class="italic">"Service from professionals to professionals."</p>
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5 hero progress-bar-section">
+            <div class="row align-items-center g-lg-5 py-5 hero-text">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h1 class="display-4 fw-bold lh-1 mb-3 section-title">Our services</h1>
+                    <div class="col-lg-6">
+                        <p class="lead italic">"Service from professionals to professionals."</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="progress-bar">
+        <!-- <div class="progress-bar">
             <div class="progress-line">
                 <div class="progress-section" id="section-prev"></div>
                 <div class="progress-section current" id="section-current"></div>
                 <div class="progress-section" id="section-next"></div>
             </div>
-        </div>
+        </div> -->
         
-        <div class="progress-content services">
+        <div class="container px-4 py-5 my-5 text-center progress-content">
         <section id="section1" class="hidden progress-bar-section">
             <h2 class="section-title">Medical Consultancy Services</h2>
             <p><span class="italic">Providing Expert Medical Guidance for Optimal Healthcare Solutions</span><br>Whether you're a healthcare provider looking to improve patient outcomes or a corporation needing expert input on health-related projects, our team of experienced medical professionals is here to assist. With specialized knowledge in internal medicine, diagnostics, and patient care, we provide evidence-based recommendations tailored to your specific needs.</p>
@@ -120,7 +128,7 @@
         </section>
 
         <section id="section8" class="hidden progress-bar-section">
-            <h2 class="section-title">Interested?</h2>
+            <h2 class="section-title">Are you interested in our services?</h2>
             <p>Did that sound like something that your company is looking for?</p>
             <a href="contact-us.html" class="contact">Contact us.</a>
         </section>
