@@ -1,18 +1,44 @@
-const observer = new IntersectionObserver((entries) => {
+const mobileObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        console.log(entry)
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
         } else {
             entry.target.classList.remove('show');
         }
     });
-}, {
-    threshold: 0.5
-});
+}, { threshold: 0.2 });
+
+const desktopObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    });
+}, { threshold: 0.4 });
 
 const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el));
+
+if (window.matchMedia("(max-width: 768px)").matches) {
+    hiddenElements.forEach((el) => mobileObserver.observe(el));
+} else {
+    hiddenElements.forEach((el) => desktopObserver.observe(el));
+}
+
+window.addEventListener("resize", () => {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        hiddenElements.forEach((el) => {
+            mobileObserver.observe(el);
+            desktopObserver.unobserve(el);
+        });
+    } else {
+        hiddenElements.forEach((el) => {
+            desktopObserver.observe(el);
+            mobileObserver.unobserve(el);
+        });
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('.progress-bar-section');

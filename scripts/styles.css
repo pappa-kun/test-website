@@ -61,28 +61,6 @@ html[data-theme='dark'] #moon-icon {
     display: inline;
 }
 
-/* body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-    margin: 6rem 11rem 11rem 15rem !important;
-    width: auto !important;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    position: relative;
-    line-height: 1.5;
-} */
-
-/* main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 5rem 0;
-    width: 100%;
-} */
 h1 {
     color: var(--text);
     font-size: 5rem;
@@ -96,28 +74,6 @@ h2 {
 p {
     color: var(--text);
 }
-
-/* .hero {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    margin: 2rem 6rem;
-}
-
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 60%;
-}
-
-.hero-img {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-} */
 
 /* wave header */
 .header {
@@ -134,7 +90,7 @@ p {
 
 .nav-link svg {
     min-width: 2rem;
-    margin: 0;
+    margin-left: 0;
 }
 
 .nav-link:hover {
@@ -151,8 +107,6 @@ p {
 
 .navbar {
     background-color: var(--background-secondary);
-    /* position: fixed; */
-    /* z-index: 1000; */
 }
 
 /* .navbar-toggler {
@@ -162,40 +116,6 @@ p {
 .navbar-toggler-icon {
     background-color: var(--secondary);
 } */
-
-/*
-.navbar-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 100%;
-}
-
-.nav-item:first-child {
-    margin-left: 14rem;
-}
-
-.nav-item:last-child {
-    margin-left: auto;
-}
-
-.nav-link {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    color: var(--text);
-    text-decoration: none;
-
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-right: 1rem;
-}
-*/
 
 .fa-sun {
     color: var(--text);
@@ -379,7 +299,8 @@ body::-webkit-scrollbar-thumb {
 .hidden {
     opacity: 0;
     filter: blur(5px);
-    transition: all 1s ;
+    transform: translateY(20px); /* Start position */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, filter 0.6s ease-out;
 }
 
 @media(prefers-reduced-motion) {
@@ -388,17 +309,45 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
+@media (max-width: 768px) {
+    .professionals {
+        padding: 10px;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+
+#section3, .professionals {
+    overflow: visible;
+}
+
+
 .show {
     opacity: 1;
     filter: blur(0);
     transform: translate(0);
 }
 
-/*Graph animation*/
-/* .graphs {
-    display: flex;
-} */
+.graphs svg {
+    width: 100%;
+    height: auto;
+}
+/* On larger screens, reduce the SVG size */
+@media (min-width: 992px) { /* For large screens (Bootstrap's 'lg' breakpoint) */
+    .graphs svg {
+        width: 75%; /* Adjust this percentage as needed */
+    }
+}
 
+@media (min-width: 1200px) { /* For extra-large screens (Bootstrap's 'xl' breakpoint) */
+    .graphs svg {
+        width: 60%; /* Adjust this percentage as needed */
+    }
+}
+
+/*Graph animation*/
 .graph:nth-child(2) {
     transition-delay: 200ms;
 }
@@ -423,39 +372,16 @@ body::-webkit-scrollbar-thumb {
     transition-delay: 1200ms;
 }
 
-/*Professionals animation*/
-/* .professionals {
-    display: flex;
-    max-width: 100%;
-} */
-
+/*Professionals cards animation*/
 .card {
     background-color: unset;
     border-color: var(--primary);
+    
 }
 
 .card-title {
     color: var(--text)
 }
-
-/* .professional {
-    padding-right: 1rem;
-    max-height: 300px;
-    max-width: 300px;
-}
-
-.professional img {
-    max-height: 300px;
-    max-width: 300px;
-}
-
-.professional p {
-    padding: 1rem;
-    border: solid;
-    border-radius: 1rem;
-    border-width: 0.25rem;
-    border-color: var(--primary);
-} */
 
 .professional:nth-child(2) {
     transition-delay: 200ms;
@@ -518,7 +444,7 @@ body::-webkit-scrollbar-thumb {
     transition: background-color 0.3s, transform 0.3s;
 } */
 
-#section-prev {
+/* #section-prev {
     top: 1.5rem;
 }
 
@@ -534,6 +460,11 @@ body::-webkit-scrollbar-thumb {
 .progress-section.current {
     background-color: var(--primary);
     transform: scale(1.1);
+} */
+
+section {
+    padding-top: 16rem;
+    padding-bottom: 16rem;
 }
 
 /*Contact form*/
